@@ -139,27 +139,27 @@ func New(msg ...interface{}) *Error {
 }
 
 func LogDebug(ctx context.Context, msg ...interface{}) {
-	doLog(ctx, nil, log.Severity_Debug, msg...)
+	// doLog(ctx, nil, log.Severity_Debug, msg...)
 }
 
 func LogDebugInner(ctx context.Context, inner error, msg ...interface{}) {
-	doLog(ctx, inner, log.Severity_Debug, msg...)
+	// doLog(ctx, inner, log.Severity_Debug, msg...)
 }
 
 func LogInfo(ctx context.Context, msg ...interface{}) {
-	doLog(ctx, nil, log.Severity_Info, msg...)
+	// doLog(ctx, nil, log.Severity_Info, msg...)
 }
 
 func LogInfoInner(ctx context.Context, inner error, msg ...interface{}) {
-	doLog(ctx, inner, log.Severity_Info, msg...)
+	// doLog(ctx, inner, log.Severity_Info, msg...)
 }
 
 func LogWarning(ctx context.Context, msg ...interface{}) {
-	doLog(ctx, nil, log.Severity_Warning, msg...)
+	// doLog(ctx, nil, log.Severity_Warning, msg...)
 }
 
 func LogWarningInner(ctx context.Context, inner error, msg ...interface{}) {
-	doLog(ctx, inner, log.Severity_Warning, msg...)
+	// doLog(ctx, inner, log.Severity_Warning, msg...)
 }
 
 func LogError(ctx context.Context, msg ...interface{}) {
