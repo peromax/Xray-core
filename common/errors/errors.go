@@ -163,39 +163,39 @@ func LogWarningInner(ctx context.Context, inner error, msg ...interface{}) {
 }
 
 func LogError(ctx context.Context, msg ...interface{}) {
-	doLog(ctx, nil, log.Severity_Error, msg...)
+	// doLog(ctx, nil, log.Severity_Error, msg...)
 }
 
 func LogErrorInner(ctx context.Context, inner error, msg ...interface{}) {
-	doLog(ctx, inner, log.Severity_Error, msg...)
+	// doLog(ctx, inner, log.Severity_Error, msg...)
 }
 
 func doLog(ctx context.Context, inner error, severity log.Severity, msg ...interface{}) {
-	pc, _, _, _ := runtime.Caller(2)
-	details := runtime.FuncForPC(pc).Name()
-	if len(details) >= trim {
-		details = details[trim:]
-	}
-	i := strings.Index(details, ".")
-	if i > 0 {
-		details = details[:i]
-	}
-	err := &Error{
-		message:  msg,
-		severity: severity,
-		caller:   details,
-		inner:    inner,
-	}
-	if ctx != nil && ctx != context.Background() {
-		id := uint32(c.IDFromContext(ctx))
-		if id > 0 {
-			err.prefix = append(err.prefix, id)
-		}
-	}
-	log.Record(&log.GeneralMessage{
-		Severity: GetSeverity(err),
-		Content:  err,
-	})
+	// pc, _, _, _ := runtime.Caller(2)
+	// details := runtime.FuncForPC(pc).Name()
+	// if len(details) >= trim {
+	// 	details = details[trim:]
+	// }
+	// i := strings.Index(details, ".")
+	// if i > 0 {
+	// 	details = details[:i]
+	// }
+	// err := &Error{
+	// 	message:  msg,
+	// 	severity: severity,
+	// 	caller:   details,
+	// 	inner:    inner,
+	// }
+	// if ctx != nil && ctx != context.Background() {
+	// 	id := uint32(c.IDFromContext(ctx))
+	// 	if id > 0 {
+	// 		err.prefix = append(err.prefix, id)
+	// 	}
+	// }
+	// log.Record(&log.GeneralMessage{
+	// 	Severity: GetSeverity(err),
+	// 	Content:  err,
+	// })
 }
 
 // Cause returns the root cause of this error.
